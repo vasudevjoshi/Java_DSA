@@ -14,6 +14,10 @@ public class stack_operations {
 			st.push(5);
 			st.push(2);
 			st.push(8);
+			System.out.println(st.peek());
+			st.pop();
+			st.display();
+			st.reverse(st);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
