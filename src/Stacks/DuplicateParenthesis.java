@@ -21,7 +21,7 @@ public class DuplicateParenthesis {
 	public static void main(String[] args) {
 		String exp = "((a+b) + (c+d))";
 		String exp2 = "(a+b)+((c+d))";
-		System.out.println(isDuplicate(exp));
-		System.out.println(isDuplicate(exp2));
+		System.out.println(isDuplicate(exp)); // false
+		System.out.println(isDuplicate(exp2)); // true
 	}
 }
