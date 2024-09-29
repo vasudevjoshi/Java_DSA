@@ -4,25 +4,25 @@ import java.util.Stack;
 public class NextGreaterElement 
 	{
 	    //Function to find the next greater element for each element of the array.
-	    public static long[] nextLargerElement(long[] arr, int n)
+	    public static int[] nextLargerElement(int[] arr, int n)
 	    { 
 	        // Your code here
-	        long[] output = new long[n];
-	        Stack<Long> st = new Stack<>();
+	        int [] output = new int[n];
+	        Stack<Integer> st = new Stack<>();
 	        output[n-1] = -1;
 	        st.push(arr[n-1]);
 	        for(int i = n-2;i>=0;i--){
-	            while(!st.isEmpty() && st.peek()>=arr[i] ) st.pop();
+	            while(!st.isEmpty() && arr[st.peek()]>=arr[i] ) st.pop();
 	            if(st.isEmpty()) output[i] = -1;
-	            else output[i] = st.peek();
-	            st.push(arr[i]);
+	            else output[i] = arr[st.peek()];
+	            st.push(i);
 	        }
 	        return output;
 	    } 
 	    public static void main(String[] args) {
-	    	long []arr = {8,4,6,2,3};
-	    	long []result = nextLargerElement(arr,arr.length);
-	    	for(long i:result)
+	    	int  []arr = {8,4,6,2,3};
+	    	int[]result = nextLargerElement(arr,arr.length);
+	    	for(int i:result)
 	    			System.out.print(i + " ");
 		}
 }
