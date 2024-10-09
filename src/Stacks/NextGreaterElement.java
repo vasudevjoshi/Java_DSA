@@ -10,19 +10,19 @@ public class NextGreaterElement
 	        int [] output = new int[n];
 	        Stack<Integer> st = new Stack<>();
 	        output[n-1] = -1;
-	        st.push(arr[n-1]);
+	        st.push(n-1);
 	        for(int i = n-2;i>=0;i--){
-	            while(!st.isEmpty() && arr[st.peek()]>=arr[i] ) st.pop();
+	            while(!st.isEmpty() && arr[st.peek()] <=arr[i] ) st.pop();
 	            if(st.isEmpty()) output[i] = -1;
-	            else output[i] = arr[st.peek()];
+	            else output[i] = st.peek();
 	            st.push(i);
 	        }
 	        return output;
 	    } 
 	    public static void main(String[] args) {
-	    	int  []arr = {8,4,6,2,3};
+	    	int  []arr = {0,1,0,2,1,0,1,3,2,1,2,1};
 	    	int[]result = nextLargerElement(arr,arr.length);
 	    	for(int i:result)
-	    			System.out.print(i + " ");
+	    			System.out.print( i + " ");
 		}
 }
