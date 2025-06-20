@@ -18,7 +18,7 @@ class Solution {
             freqS[s.charAt(i) - 'a']++;
         }
 
-        // Slide the window over s
+        // Slide the window over
         for (int i = 0; i <= len1 - len2; i++) {
             if (Arrays.equals(freqP, freqS)) {
                 ans.add(i);
