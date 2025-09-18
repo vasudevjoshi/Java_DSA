@@ -1,5 +1,7 @@
 package Graphs;
 
+import java.util.ArrayList;
+
 class Solution {
     public boolean canFinish(int numCourses, int[][] edges) {
         int []indegree = new int[numCourses];
